@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "prelaravel": "php artisan migrate && php artisan db:seed",
+        "prelaravel": "php artisan migrate",
         "laravel": "php artisan serve",
         "laravel.host": "npm run laravel -- --host=0.0.0.0",
         "build": "vite build"

@@ -1,0 +1,21 @@
+tasks:
+  - name: Vite
+    init: bash ./scripts/.gitpod-init.sh
+    command: npm run dev
+
+  - name: Laravel
+    init: gp sync-await dependencies
+    command: npm run laravel.host
+    openMode: split-right
+
+ports:
+  - name: Vite Server
+    port: 5173
+    visibility: public
+  - name: Laravel Server
+    port: 8000
+    onOpen: open-browser
+  - name: MySQL Database
+    port: 3306
+
+image: gitpod/workspace-mysql

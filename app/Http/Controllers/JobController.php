@@ -16,7 +16,19 @@ class JobController extends Controller
      */
     public function index(IndexJobRequest $request)
     {
+        $input = $request->validated() ?: ['per_page' => null, 'type' => null, 'query' => null];
 
+        $jobs = Job::type($input['type'])
+            ->search($input['query'])
+            ->paginate($input['per_page']);
+
+        return Inertia::render('Jobs/List', [
+            'jobs' => JobResource::collection($jobs),
+            'filters' => [
+                'type' => $input['type'],
+                'query' => $input['query']
+            ]
+        ]);
     }
 
     /**

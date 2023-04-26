@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Job;
+use Constants\Constants;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,7 +17,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->set('type', Job::JOB_TYPES);
+            $table->enum('type', Constants::JOB_TYPES);
             $table->boolean('paused')->default(false);
         });
     }

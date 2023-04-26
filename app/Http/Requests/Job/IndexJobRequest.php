@@ -49,7 +49,7 @@ class IndexJobRequest extends FormRequest
 
         foreach ($data as $key => $value) {
             if (!$this->filled($key)) {
-                $this[$key] = null;
+                $this[$key] = $data[$key];
             }
         }
     }

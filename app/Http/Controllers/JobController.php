@@ -25,11 +25,7 @@ class JobController extends Controller
 
         return Inertia::render('Jobs/List', [
             'jobs' => JobResource::collection($jobs),
-            'filters' => [
-                'type' => $input['type'],
-                'query' => $input['query'],
-                'paused' => $input['paused']
-            ]
+            'filters' => $input
         ]);
     }
 

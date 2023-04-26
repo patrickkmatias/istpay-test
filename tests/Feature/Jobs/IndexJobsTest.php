@@ -30,6 +30,7 @@ class IndexJobsTest extends TestCase
                     )
                     ->has(
                         'filters', fn(Assert $filters) => $filters
+                            ->where('per_page', 10)
                             ->where('type', null)
                             ->where('query', null)
                             ->where('paused', false)

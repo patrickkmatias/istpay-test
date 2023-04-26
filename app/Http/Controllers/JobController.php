@@ -16,9 +16,10 @@ class JobController extends Controller
      */
     public function index(IndexJobRequest $request)
     {
-        $input = $request->validated() ?: ['per_page' => null, 'type' => null, 'query' => null];
+        $input = $request->all();
 
         $jobs = Job::type($input['type'])
+            ->paused($input['paused'])
             ->search($input['query'])
             ->paginate($input['per_page']);
 
@@ -26,7 +27,8 @@ class JobController extends Controller
             'jobs' => JobResource::collection($jobs),
             'filters' => [
                 'type' => $input['type'],
-                'query' => $input['query']
+                'query' => $input['query'],
+                'paused' => $input['paused']
             ]
         ]);
     }

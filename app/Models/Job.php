@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,9 +26,13 @@ class Job extends Model
         $this->save();
     }
 
-    public const JOB_TYPES = [
-        'CLT',
-        'Contractor',
-        'Freelance',
-    ];
+    public function scopeType(Builder $query, string|null $type)
+    {
+        return $type ? $query->where('type', $type) : $query->whereNotNull('type');
+    }
+
+    public function scopeSearch(Builder $query, string|null $queryStr)
+    {
+        return $queryStr ? $query->whereFuzzy('title', $queryStr) : $query;
+    }
 }

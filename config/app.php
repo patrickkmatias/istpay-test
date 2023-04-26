@@ -182,6 +182,6 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        'Constants' => Constants\Constants::class
+        'Constants' => App\Constants::class
     ])->toArray(),
 ];

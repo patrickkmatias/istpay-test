@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e414892991e9c4b487066fd20390db1b",
+    "content-hash": "c1c7aa38fce379f19943fb3ac12545bb",
     "packages": [
         {
             "name": "brick/math",
@@ -60,6 +60,59 @@
                 }
             ],
             "time": "2023-01-15T23:15:59+00:00"
+        },
+        {
+            "name": "caneara/quest",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/caneara/quest.git",
+                "reference": "cb00e95724431004c304463627cff95e0365adf4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/caneara/quest/zipball/cb00e95724431004c304463627cff95e0365adf4",
+                "reference": "cb00e95724431004c304463627cff95e0365adf4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.0",
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Quest\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Quest\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A package that provides pseudo fuzzy-searching to Laravel database queries.",
+            "homepage": "https://github.com/caneara/quest",
+            "keywords": [
+                "fuzzy",
+                "laravel",
+                "php",
+                "quest",
+                "search"
+            ],
+            "support": {
+                "issues": "https://github.com/caneara/quest/issues",
+                "source": "https://github.com/caneara/quest/tree/v3.0.0"
+            },
+            "time": "2023-04-18T15:44:04+00:00"
         },
         {
             "name": "dflydev/dot-access-data",

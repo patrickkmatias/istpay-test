@@ -290,7 +290,383 @@ class JobSeeder extends Seeder
                 This is a full-time position with competitive compensation and benefits packages. If you are a DevOps professional with a passion for building and maintaining robust and scalable software infrastructure, we encourage you to apply.",
                 'type' => 'CLT', 
             ],
-            
+            [
+                'title' => 'Front-End Developer',
+                'description' => "We are looking for a skilled and experienced Front-End Developer to join our development team. The Front-End Developer will be responsible for developing and maintaining web applications that meet the needs of our clients and users.
+
+                Key Responsibilities:
+                
+                Collaborate with designers, developers, and other stakeholders to create high-quality, user-friendly web applications
+                Develop responsive, cross-browser compatible, and accessible front-end components using HTML, CSS, and JavaScript
+                Optimize web applications for performance, speed, and scalability
+                Identify and troubleshoot front-end issues and bugs
+                Write clean, well-documented, and maintainable code
+                Stay up-to-date with the latest front-end development trends, techniques, and tools
+                Participate in code reviews and contribute to the improvement of the development process
+
+                Requirements:
+                
+                Bachelor's degree in Computer Science, Software Engineering, or a related field
+                At least 3 years of experience in front-end development
+                Strong proficiency in HTML, CSS, and JavaScript
+                Experience with front-end frameworks such as React, Vue, or Angular
+                Familiarity with version control systems, particularly Git
+                Understanding of software development principles and methodologies, including Agile
+                Excellent problem-solving and analytical skills
+                Strong communication and collaboration skills
+                Ability to work independently and within a team environment
+                Detail-oriented with a strong focus on quality
+
+                This is a full-time position with competitive compensation and benefits packages. If you are a front-end developer with a passion for building high-quality web applications, we encourage you to apply.",
+                'type' => 'CLT',
+            ],
+            [
+                'title' => 'Front-end Developer',
+                'description' => "We are seeking a talented Front-end Developer to join our team on a freelance basis. As a Front-end Developer, you will be responsible for developing and implementing user-facing features that enhance the user experience of our web applications.
+
+                Key Responsibilities:
+                
+                Collaborate with designers and back-end developers to create user-friendly interfaces for web applications
+                Develop and implement responsive and cross-browser compatible user interfaces
+                Write clean, efficient, and maintainable code using HTML, CSS, and JavaScript
+                Optimize web application performance and scalability
+                Stay up-to-date with emerging trends and technologies in front-end development
+                Participate in code reviews and contribute to the development of best practices and standards
+                Work closely with the QA team to ensure that all code changes are thoroughly tested and meet the specified requirements
+
+                Requirements:
+                
+                Bachelor's degree in Computer Science, Information Technology, or a related field
+                At least 3 years of experience in front-end development
+                Strong understanding of HTML, CSS, and JavaScript
+                Experience with popular front-end frameworks and libraries such as React, Angular, or Vue.js
+                Knowledge of responsive design and cross-browser compatibility
+                Ability to write efficient and maintainable code
+                Familiarity with Agile methodologies and tools
+                Excellent problem-solving and debugging skills
+                Strong communication and collaboration skills
+                Experience with Git and version control is a plus
+
+                This is a freelance position with the potential for ongoing work based on performance. If you are a self-motivated front-end developer with a passion for creating user-friendly interfaces for web applications, we encourage you to apply.",
+                'type' => 'Freelance',
+            ],
+            [
+                'title' => 'Software Quality Assurance Engineer',
+                'description' => "We are seeking a skilled Software Quality Assurance Engineer to join our software development team. As a Software Quality Assurance Engineer, you will be responsible for ensuring the quality of our software products by developing and executing test plans, identifying defects, and working with development teams to resolve issues.
+
+                Key Responsibilities:
+                
+                Develop and execute test plans and test cases to ensure the quality of software products
+                Collaborate with development teams to identify and resolve software defects
+                Identify and report software quality issues and work with development teams to resolve them
+                Create and maintain automated testing scripts to improve testing efficiency
+                Document and track software defects using issue tracking software
+                Participate in the software development lifecycle to ensure that software quality is maintained throughout the process
+                Work with cross-functional teams to ensure that software products meet business requirements
+
+                Requirements:
+                
+                Bachelor's degree in Computer Science, Software Engineering, or a related field
+                At least 3 years of experience in software quality assurance, with experience in testing web applications and APIs
+                Solid understanding of software testing methodologies and techniques
+                Experience with automated testing tools and frameworks
+                Familiarity with Agile software development methodologies
+                Strong problem-solving and analytical skills
+                Excellent communication and interpersonal skills
+                Detail-oriented with a strong focus on accuracy and quality
+
+                This is a full-time position with competitive compensation and benefits packages. If you are a software quality assurance professional with a passion for ensuring the quality of software products, we encourage you to apply.",
+                'type' => 'CLT',
+            ],
+            [
+                'title' => 'HR Generalist',
+                'description' => "We are seeking an experienced HR Generalist to join our team. As an HR Generalist, you will be responsible for providing a broad range of HR support to our employees and managers, including recruitment, onboarding, performance management, employee relations, and compliance.
+
+                Key Responsibilities:
+                
+                Assist with recruitment efforts, including sourcing, screening, and interviewing candidates
+                Facilitate the onboarding process for new hires, including orientation, training, and documentation
+                Provide guidance and support to managers and employees on performance management, including goal setting, performance feedback, and disciplinary actions
+                Serve as a point of contact for employee relations issues, providing support and guidance to employees and managers
+                Manage and maintain HR policies and procedures, ensuring compliance with federal and state regulations
+                Manage employee benefits programs, including enrollment, administration, and communication
+                Support HR reporting and analysis, including employee headcount, turnover, and other HR metrics
+                Contribute to HR projects and initiatives as assigned
+                
+                Requirements:
+                
+                Bachelor's degree in Human Resources, Business Administration, or a related field
+                At least 5 years of experience in HR, with a focus on HR Generalist duties
+                Strong knowledge of HR principles, practices, and regulations
+                Demonstrated success in recruiting and hiring top talent
+                Excellent communication and interpersonal skills
+                Strong problem-solving and analytical skills
+                Ability to work independently and within a team environment
+                Detail-oriented with a strong focus on accuracy and quality
+                PHR or SPHR certification is a plus
+
+                This is a full-time position with competitive compensation and benefits packages. If you are an experienced HR professional with a passion for supporting employees and managers and driving HR initiatives, we encourage you to apply.
+                ",
+                'type' => 'CLT',
+            ],
+            [
+                'title' => 'Talent Acquisition Specialist',
+                'description' => "We are looking for a motivated Talent Acquisition Specialist to join our HR team. The Talent Acquisition Specialist will be responsible for sourcing, recruiting, and hiring top talent for various positions within the organization.
+
+                Key Responsibilities:
+                
+                Develop and implement sourcing strategies to attract a diverse pool of candidates for open positions
+                Utilize various recruiting channels, such as job boards, social media, and employee referrals, to source candidates
+                Review resumes and applications, and conduct phone screens and interviews to assess candidate qualifications
+                Collaborate with hiring managers to develop job descriptions and interview criteria
+                Facilitate the interview process, including scheduling interviews and conducting reference checks
+                Ensure compliance with all hiring laws, regulations, and policies
+                Maintain accurate and up-to-date candidate and job-related information in the Applicant Tracking System (ATS)
+                Attend job fairs and other recruiting events to promote the company and job openings
+
+                Requirements:
+                
+                Bachelor's degree in Human Resources, Business Administration, or a related field
+                At least 3 years of experience in talent acquisition or a related field
+                Solid understanding of recruitment processes, strategies, and best practices
+                Experience with applicant tracking systems and recruiting software
+                Excellent communication and interpersonal skills
+                Strong organizational and project management skills
+                Ability to work independently and within a team environment
+                Detail-oriented with a strong focus on accuracy and quality
+                Familiarity with social media and other sourcing channels is a plus
+
+                This is a full-time position with competitive compensation and benefits packages. If you are a skilled recruiter with a passion for finding top talent, we encourage you to apply.",
+                'type' => 'CLT',
+            ],
+            [
+                'title' => 'Digital Marketing Specialist',
+                'description' => "We are looking for an experienced Digital Marketing Specialist to develop and implement marketing strategies that drive traffic, engagement, and leads to our website. As a Digital Marketing Specialist, you will be responsible for developing and executing digital marketing campaigns across various channels, including SEO, SEM, social media, email, and display advertising.
+
+                Key Responsibilities:
+                
+                Develop and execute digital marketing campaigns to drive traffic, engagement, and leads to our website
+                Conduct keyword research and analysis to optimize website content and drive organic traffic
+                Manage and optimize paid search and display advertising campaigns
+                Manage and optimize social media campaigns across various platforms
+                Develop and manage email marketing campaigns, including writing copy and designing templates
+                Monitor and report on the performance of digital marketing campaigns and activities
+                Collaborate with internal teams to ensure that all digital marketing activities are aligned with business objectives
+                Stay up-to-date with digital marketing trends and best practices
+
+                Requirements:
+                
+                Bachelor's degree in Marketing, Communications, or a related field
+                At least 4 years of experience in digital marketing, with a focus on SEO, SEM, social media, email marketing, and display advertising
+                Solid understanding of digital marketing principles, strategies, and tactics
+                Experience with digital marketing tools and platforms, such as Google Analytics, AdWords, and social media management tools
+                Strong analytical skills and the ability to use data to drive decision-making
+                Excellent communication and writing skills
+                Detail-oriented with a strong focus on accuracy and quality
+                Ability to work independently and within a team environment
+                Agency experience is a plus
+
+                This is a contractor position with the potential for ongoing work based on performance. If you are a results-driven digital marketing specialist with a passion for driving traffic and leads to websites, we encourage you to apply.",
+                'type' => 'Contractor',
+            ],
+            [
+                'title' => 'Sales Associate',
+                'description' => "We are looking for a dynamic and results-driven Sales Associate to join our team. As a Sales Associate, you will be responsible for building and maintaining relationships with customers, identifying their needs, and recommending products and services that best meet their needs.
+
+                Key Responsibilities:
+                
+                Build and maintain relationships with customers to ensure repeat business and referrals
+                Identify customer needs and recommend products and services that best meet their needs
+                Meet or exceed sales goals and quotas
+                Maintain a high level of product knowledge and stay up-to-date with industry trends
+                Process orders and provide accurate product information and pricing
+                Resolve customer issues and complaints in a timely and professional manner
+                Collaborate with internal teams to ensure customer satisfaction and sales success
+
+                Requirements:
+                
+                High school diploma or equivalent
+                At least 1 year of experience in sales or a related field
+                Strong communication and interpersonal skills
+                Proven ability to meet or exceed sales goals and quotas
+                Strong customer service skills and the ability to resolve customer issues in a timely and professional manner
+                Excellent organizational skills and attention to detail
+                Ability to work independently and within a team environment
+                Familiarity with CRM systems and processes is a plus
+                Sales experience in the [industry] industry is a plus
+
+                This is a full-time position with competitive compensation and benefits packages. If you are a results-driven sales professional with a passion for building relationships with customers, we encourage you to apply.",
+                'type' => 'CLT',
+            ],
+            [
+                'title' => 'Human Resources Manager',
+                'description' => "We are seeking an experienced Human Resources Manager to join our team. As the HR Manager, you will be responsible for developing and executing HR strategies that support our business objectives, as well as managing all HR-related activities, including recruitment, training and development, performance management, employee relations, and compliance.
+
+                Key Responsibilities:
+                
+                Develop and implement HR strategies that support business objectives and drive employee engagement and satisfaction
+                Manage the recruitment and selection process, including job postings, candidate screening, interviews, and job offers
+                Develop and deliver training and development programs to enhance employee skills and knowledge
+                Manage employee performance, including performance evaluations, goal setting, and coaching
+                Ensure compliance with HR policies, procedures, and regulations
+                Manage employee relations, including conflict resolution, mediation, and disciplinary actions
+                Maintain accurate HR records and prepare reports as needed
+                Collaborate with other departments to ensure that HR initiatives are aligned with business objectives
+
+                Requirements:
+                
+                Bachelor's degree in Human Resources, Business Administration, or a related field
+                At least 5 years of experience in HR management, with a focus on recruitment, training and development, performance management, and employee relations
+                Strong knowledge of HR laws, regulations, and best practices
+                Excellent communication and interpersonal skills
+                Strong problem-solving and analytical skills
+                Detail-oriented with a strong focus on accuracy and quality
+                Ability to work independently and within a team environment
+                Experience with HR software and tools is a plus
+                PHR or SPHR certification is a plus
+
+                This is a full-time position with competitive compensation and benefits packages. If you are an experienced HR professional with a passion for driving employee engagement and satisfaction, we encourage you to apply.",
+                'type' => 'CLT',
+            ],
+            [
+                'title' => 'Data Scientist',
+                'description' => "We are looking for a highly motivated and experienced Data Scientist to join our team on a freelance basis. As a Data Scientist, you will be responsible for analyzing and interpreting complex data sets to identify patterns and trends, develop predictive models, and provide insights and recommendations to our clients.
+
+                Key Responsibilities:
+                
+                Conduct exploratory data analysis and data mining to identify patterns and trends
+                Develop predictive models and algorithms to support decision-making
+                Communicate insights and recommendations to clients and stakeholders
+                Work with large and complex data sets, and ensure data quality and integrity
+                Collaborate with cross-functional teams to develop data-driven solutions
+                Stay up-to-date with the latest trends and developments in data science and analytics
+
+                Requirements:
+                
+                Bachelor's or Master's degree in Data Science, Computer Science, Statistics, or a related field
+                At least 3 years of experience in data science and analytics
+                Strong knowledge of statistical modeling, machine learning, and data mining techniques
+                Experience with programming languages such as Python or R
+                Experience with data visualization tools and techniques
+                Strong analytical and problem-solving skills
+                Excellent communication and presentation skills
+                Ability to work independently and manage multiple projects simultaneously
+
+                This is a freelance position with the potential for ongoing work based on performance. If you are a self-motivated and results-driven Data Scientist with a passion for solving complex problems with data, we encourage you to apply.",
+                'type' => 'Freelance',
+            ],
+            [
+                'title' => 'Content Writer',
+                'description' => "We are seeking a talented Content Writer to join our team on a freelance basis. As a Content Writer, you will be responsible for creating engaging, informative, and high-quality content for our website, blog, social media, and other marketing channels.
+
+                Key Responsibilities:
+                
+                Write high-quality, SEO-optimized content for our website, blog, social media, and other marketing channels
+                Conduct research to develop content ideas and ensure accuracy and relevance
+                Edit and proofread content to ensure it meets our standards for quality, accuracy, and style
+                Collaborate with internal teams to ensure that content is aligned with business objectives and brand voice
+                Stay up-to-date with industry trends and best practices in content marketing and SEO
+
+                Requirements:
+                
+                Bachelor's degree in Journalism, English, Communications, or a related field
+                At least 3 years of experience in content writing, preferably in a digital marketing or agency setting
+                Excellent writing, editing, and proofreading skills
+                Strong knowledge of SEO best practices and the ability to write SEO-optimized content
+                Ability to conduct research and develop content ideas
+                Strong attention to detail and a focus on quality
+                Ability to work independently and within a team environment
+                Experience with content management systems and tools is a plus
+
+                This is a freelance position with the potential for ongoing work based on performance. If you are a talented content writer with a passion for creating engaging and informative content, we encourage you to apply.",
+                'type' => 'Freelance',
+            ],            
+            [
+                'title' => 'Human Resources Manager',
+                'description' => "We are seeking an experienced Human Resources Manager to join our team. As the HR Manager, you will be responsible for developing and executing HR strategies that support our business objectives, as well as managing all HR-related activities, including recruitment, training and development, performance management, employee relations, and compliance.
+
+                Key Responsibilities:
+                
+                Develop and implement HR strategies that support business objectives and drive employee engagement and satisfaction
+                Manage the recruitment and selection process, including job postings, candidate screening, interviews, and job offers
+                Develop and deliver training and development programs to enhance employee skills and knowledge
+                Manage employee performance, including performance evaluations, goal setting, and coaching
+                Ensure compliance with HR policies, procedures, and regulations
+                Manage employee relations, including conflict resolution, mediation, and disciplinary actions
+                Maintain accurate HR records and prepare reports as needed
+                Collaborate with other departments to ensure that HR initiatives are aligned with business objectives
+
+                Requirements:
+                
+                Bachelor's degree in Human Resources, Business Administration, or a related field
+                At least 5 years of experience in HR management, with a focus on recruitment, training and development, performance management, and employee relations
+                Strong knowledge of HR laws, regulations, and best practices
+                Excellent communication and interpersonal skills
+                Strong problem-solving and analytical skills
+                Detail-oriented with a strong focus on accuracy and quality
+                Ability to work independently and within a team environment
+                Experience with HR software and tools is a plus
+                PHR or SPHR certification is a plus
+
+                This is a full-time position with competitive compensation and benefits packages. If you are an experienced HR professional with a passion for driving employee engagement and satisfaction, we encourage you to apply.",
+                'type' => 'CLT',
+                'paused' => true
+            ],
+            [
+                'title' => 'Data Scientist',
+                'description' => "We are looking for a highly motivated and experienced Data Scientist to join our team on a freelance basis. As a Data Scientist, you will be responsible for analyzing and interpreting complex data sets to identify patterns and trends, develop predictive models, and provide insights and recommendations to our clients.
+
+                Key Responsibilities:
+                
+                Conduct exploratory data analysis and data mining to identify patterns and trends
+                Develop predictive models and algorithms to support decision-making
+                Communicate insights and recommendations to clients and stakeholders
+                Work with large and complex data sets, and ensure data quality and integrity
+                Collaborate with cross-functional teams to develop data-driven solutions
+                Stay up-to-date with the latest trends and developments in data science and analytics
+
+                Requirements:
+                
+                Bachelor's or Master's degree in Data Science, Computer Science, Statistics, or a related field
+                At least 3 years of experience in data science and analytics
+                Strong knowledge of statistical modeling, machine learning, and data mining techniques
+                Experience with programming languages such as Python or R
+                Experience with data visualization tools and techniques
+                Strong analytical and problem-solving skills
+                Excellent communication and presentation skills
+                Ability to work independently and manage multiple projects simultaneously
+
+                This is a freelance position with the potential for ongoing work based on performance. If you are a self-motivated and results-driven Data Scientist with a passion for solving complex problems with data, we encourage you to apply.",
+                'type' => 'Freelance',
+                'paused' => true
+            ],
+            [
+                'title' => 'Content Writer',
+                'description' => "We are seeking a talented Content Writer to join our team on a freelance basis. As a Content Writer, you will be responsible for creating engaging, informative, and high-quality content for our website, blog, social media, and other marketing channels.
+
+                Key Responsibilities:
+                
+                Write high-quality, SEO-optimized content for our website, blog, social media, and other marketing channels
+                Conduct research to develop content ideas and ensure accuracy and relevance
+                Edit and proofread content to ensure it meets our standards for quality, accuracy, and style
+                Collaborate with internal teams to ensure that content is aligned with business objectives and brand voice
+                Stay up-to-date with industry trends and best practices in content marketing and SEO
+
+                Requirements:
+                
+                Bachelor's degree in Journalism, English, Communications, or a related field
+                At least 3 years of experience in content writing, preferably in a digital marketing or agency setting
+                Excellent writing, editing, and proofreading skills
+                Strong knowledge of SEO best practices and the ability to write SEO-optimized content
+                Ability to conduct research and develop content ideas
+                Strong attention to detail and a focus on quality
+                Ability to work independently and within a team environment
+                Experience with content management systems and tools is a plus
+
+                This is a freelance position with the potential for ongoing work based on performance. If you are a talented content writer with a passion for creating engaging and informative content, we encourage you to apply.",
+                'type' => 'Freelance',
+                'paused' => true
+            ],            
         ];
 
         foreach ($jobs as $job) {

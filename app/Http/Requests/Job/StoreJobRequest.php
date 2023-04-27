@@ -18,7 +18,18 @@ class StoreJobRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:225'],
             'description' => ['string', 'nullable'],
-            'type' => [Rule::in(Constants::JOB_TYPES)]
+            'type' => ['required', Rule::in(Constants::JOB_TYPES)],
+            'paused' => ['required', 'boolean']
         ];
+    }
+
+    /**
+     * Prepare the data for validation.
+     */
+    protected function prepareForValidation(): void
+    {
+        $this->merge([
+            'paused' => filter_var($this->paused, FILTER_VALIDATE_BOOLEAN)
+        ]);
     }
 }

@@ -42,7 +42,9 @@ class JobController extends Controller
      */
     public function store(StoreJobRequest $request)
     {
-        //
+        $job = Job::create($request->all());
+
+        return new JobResource($job);
     }
 
     /**

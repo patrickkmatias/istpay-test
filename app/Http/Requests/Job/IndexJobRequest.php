@@ -16,7 +16,7 @@ class IndexJobRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'per_page' => ['numeric', 'nullable'],
+            'per_page' => ['numeric', 'nullable', 'between:5,30'],
             'type' => [Rule::in(Constants::JOB_TYPES), 'nullable'],
             'query' => ['string', 'min:3', 'nullable'],
             'paused' => ['boolean', 'nullable']

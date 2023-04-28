@@ -12,19 +12,7 @@ class Job extends Model
 
     protected $table = 'jobs';
 
-    protected $fillable = ['title', 'description', 'type'];
-
-    public function pause()
-    {
-        $this->paused = true;
-        $this->save();
-    }
-
-    public function unpause()
-    {
-        $this->paused = false;
-        $this->save();
-    }
+    protected $fillable = ['title', 'description', 'type', 'paused'];
 
     public function scopeType(Builder $query, string|null $type)
     {

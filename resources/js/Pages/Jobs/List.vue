@@ -17,8 +17,6 @@ const { filters, jobs } = defineProps({
     jobs: Object,
 });
 
-const data = () => console.log({ filters, jobs });
-
 function updateJobs() {
     return router.visit(route("jobs.list"), {
         only: ["jobs", "filters"],
@@ -61,37 +59,47 @@ watch(
                 minlength="3"
                 v-model="filters.query"
             />
-            query value {{ filters.query }}
         </div>
         <div class="block mt-4">
             <label class="flex items-center">
                 <Checkbox name="paused" v-model:checked="filters.paused" />
                 <span class="ml-2 text-sm text-gray-600">Show paused jobs</span>
             </label>
-            checkbox value {{ filters.paused }}
         </div>
-        <div>
-            <InputLabel for="jobsPerPage">Jobs per page</InputLabel>
-            <select name="jobsPerPage" v-model="filters.per_page">
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-            </select>
-            per page value {{ filters.per_page }}
-        </div>
-        <div>
-            <InputLabel for="jobType">Job types</InputLabel>
-            <select name="jobType" v-model="filters.type">
-                <option :value="null" selected>All</option>
-                <option value="CLT">CLT</option>
-                <option value="Contractor">Contractor</option>
-                <option value="Freelance">Freelance</option>
-            </select>
-            job type value {{ filters.type }}
-        </div>
-        <PrimaryButton @click="data">console.log</PrimaryButton>
-        <p>Jobs quantity {{ jobs.data.length }}</p>
-        <div>
+        <section class="w-full flex gap-4 mt-2">
+            <div>
+                <InputLabel for="jobsPerPage">Jobs per page</InputLabel>
+                <select
+                    class="w-24 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+                    name="jobsPerPage"
+                    v-model="filters.per_page"
+                >
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
+            </div>
+            <div>
+                <InputLabel for="jobType">Job type</InputLabel>
+                <select
+                    class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+                    name="jobType"
+                    v-model="filters.type"
+                >
+                    <option :value="null" selected>All</option>
+                    <option value="CLT">CLT</option>
+                    <option value="Contractor">Contractor</option>
+                    <option value="Freelance">Freelance</option>
+                </select>
+            </div>
+        </section>
+        <p class="mt-4 font-bold">
+            Total jobs encountered: {{ jobs.meta.total }}
+        </p>
+        <p v-if="jobs.meta.total != jobs.data.length" class="font-medium">
+            Showing {{ jobs.data.length }} jobs.
+        </p>
+        <div class="mt-2">
             <JobPost v-for="job in jobs.data" :job="job" class="mb-6" />
         </div>
     </section>

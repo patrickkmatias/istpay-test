@@ -24,7 +24,9 @@ const form = useForm({
 const updated = computed(() => usePage().props.updated);
 
 function submit() {
-    return form.patch(route("jobs.update"), { only: ["updated", "jobs"] });
+    return form.patch(route("jobs.update", job.id), {
+        only: ["updated"],
+    });
 }
 </script>
 <template>
@@ -74,7 +76,7 @@ function submit() {
             </label>
         </div>
 
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-4 flex-row-reverse">
             <PrimaryButton
                 class="bg-indigo-800 border-indigo-900 hover:bg-indigo-900 focus:bg-indigo-900 active:bg-indigo-900"
                 >Submit</PrimaryButton
@@ -85,15 +87,19 @@ function submit() {
                 class="bg-indigo-100 !border-0 hover:bg-indigo-300"
                 >Return</SecondaryButton
             >
-            <Transition
-                enter-from-class="opacity-0"
-                leave-to-class="opacity-0"
-                class="transition duration-500 ease-in-out"
-            >
-                <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">
-                    Job updated successfuly!
-                </p>
-            </Transition>
         </div>
+        <Transition
+            enter-from-class="opacity-0"
+            leave-to-class="opacity-0"
+            class="transition duration-500 ease-in-out"
+        >
+            <p
+                v-if="form.wasSuccessful"
+                class="text-sm text-gray-600 mt-4 text-center"
+            >
+                Job updated successfuly! <br />
+                Refresh the main page to see the effects.
+            </p>
+        </Transition>
     </form>
 </template>

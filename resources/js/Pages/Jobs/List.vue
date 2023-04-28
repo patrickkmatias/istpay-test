@@ -4,6 +4,7 @@ import TextInput from "@/Components/TextInput.vue";
 import Checkbox from "@/Components/Checkbox.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import CreateJobForm from "./Partials/CreateJobForm.vue";
+import JobPost from "@/Components/JobPost.vue";
 import { router } from "@inertiajs/vue3";
 import { ref, watch } from "vue";
 
@@ -91,11 +92,7 @@ watch(
         <PrimaryButton @click="data">console.log</PrimaryButton>
         <p>Jobs quantity {{ jobs.data.length }}</p>
         <div>
-            <div v-for="job in jobs.data" class="border-2">
-                <h1 class="text-xl font-bold">{{ job.title }}</h1>
-                <h2 class="text-lg font-medium">{{ job.type }}</h2>
-                <p>{{ job.description }}</p>
-            </div>
+            <JobPost v-for="job in jobs.data" :job="job" class="mb-6" />
         </div>
     </section>
 </template>

@@ -24,15 +24,15 @@ class CreateJobTest extends TestCase
             'paused' => false,
         ];
 
-        $this->actingAs($user)->post($path, $data)->assertSee($data)->assertCreated();
+        $this->actingAs($user)->post($path, $data)->assertSee($data)->assertOk();
 
         $data = array_diff_key($data, ['paused' => false]);
 
-        $this->actingAs($user)->post($path, $data)->assertCreated();
+        $this->actingAs($user)->post($path, $data)->assertOk();
 
         $data = array_diff_key($data, ['description' => '']);
 
-        $this->actingAs($user)->post($path, $data)->assertCreated();
+        $this->actingAs($user)->post($path, $data)->assertOk();
     }
 
     public function test_throw_if_no_required_fields()

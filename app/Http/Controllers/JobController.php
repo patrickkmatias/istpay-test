@@ -42,27 +42,17 @@ class JobController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Job $job)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Job $job)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(UpdateJobRequest $request, Job $job)
     {
-        //
+        $job->update($request->all());
+
+        $job->save();
+
+        return Inertia::render('Jobs/List', [
+            'updated' => new JobResource($job),
+        ]);;
     }
 
     /**

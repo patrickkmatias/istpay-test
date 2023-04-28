@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::controller(JobController::class)->group(function () {
         Route::get('/jobs', 'index')->name('jobs.list');
         Route::post('/jobs', 'store')->name('jobs.store');
+        Route::patch('/jobs/{job}', 'update')->name('jobs.update');
     });
 });
 

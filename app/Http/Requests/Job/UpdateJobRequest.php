@@ -18,7 +18,18 @@ class UpdateJobRequest extends FormRequest
         return [
             'title' => ['string', 'max:225', 'nullable'],
             'description' => ['string', 'nullable'],
-            'type' => [Rule::in(Constants::JOB_TYPES), 'nullable']
+            'type' => [Rule::in(Constants::JOB_TYPES), 'nullable'],
+            'paused' => ['boolean', 'nullable'],
         ];
+    }
+
+    /**
+     * Prepare the data for validation.
+     */
+    protected function prepareForValidation(): void
+    {
+        $this->merge([
+            'paused' => filter_var($this->paused, FILTER_VALIDATE_BOOLEAN)
+        ]);
     }
 }

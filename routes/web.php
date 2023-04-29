@@ -39,7 +39,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/jobs', 'index')->name('jobs.list');
         Route::post('/jobs', 'store')->name('jobs.store');
         Route::patch('/jobs/{job}', 'update')->name('jobs.update');
-    });
+        Route::delete('/jobs/{ids}', 'destroy')->name('jobs.destroy');
+    }
+    );
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

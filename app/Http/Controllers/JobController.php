@@ -38,7 +38,7 @@ class JobController extends Controller
 
         return Inertia::render('Jobs/List', [
             'created' => new JobResource($job),
-        ]);;
+        ]);
     }
 
     /**
@@ -52,14 +52,18 @@ class JobController extends Controller
 
         return Inertia::render('Jobs/List', [
             'updated' => new JobResource($job),
-        ]);;
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Job $job)
+    public function destroy(string $ids)
     {
-        //
+        $ids = explode(',', $ids);
+
+        Job::destroy($ids);
+
+        return response(null, 204);
     }
 }

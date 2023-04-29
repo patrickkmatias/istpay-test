@@ -31,14 +31,14 @@ const toggleForm = () => showForm.value = !showForm.value
                 <SecondaryButton
                     @click="emit('close')"
                     type="button"
-                    class="bg-indigo-100 !border-0 hover:bg-indigo-300"
+                    class="!border-0 bg-indigo-400 hover:bg-indigo-500 text-white"
                     >Close</SecondaryButton
                 >
                 <SecondaryButton
                     @click="toggleForm()"
                     type="button"
-                    class="!p-2 w-fit h-fit bg-indigo-100 !border-0 hover:bg-indigo-300"
-                    ><PencilIcon class="w-6 h-6 text-gray-700"
+                    class="!p-2 w-fit h-fit !border-0 bg-indigo-400 hover:bg-indigo-500"
+                    ><PencilIcon class="w-6 h-6 text-white"
                 /></SecondaryButton>
             </section>
         </article>

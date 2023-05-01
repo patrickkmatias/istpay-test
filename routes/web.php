@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -35,12 +36,21 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::controller(JobController::class)->group(function () {
-        Route::get('/jobs', 'index')->name('jobs.list');
-        Route::post('/jobs', 'store')->name('jobs.store');
-        Route::patch('/jobs/{job}', 'update')->name('jobs.update');
-        Route::delete('/jobs/{ids}', 'destroy')->name('jobs.destroy');
-    }
+    Route::controller(JobController::class)->group(
+        function () {
+            Route::get('/jobs', 'index')->name('jobs.list');
+            Route::post('/jobs', 'store')->name('jobs.store');
+            Route::patch('/jobs/{job}', 'update')->name('jobs.update');
+            Route::delete('/jobs/{ids}', 'destroy')->name('jobs.destroy');
+        }
+    );
+
+    Route::controller(CandidateController::class)->group(
+        function () {
+            Route::post('/candidates/{job}', 'apply')->name('candidates.apply');
+            Route::delete('/candidates/{job}', 'unapply')->name('candidates.unapply');
+            Route::patch('/candidates/{candidate}', 'update')->name('candidates.update');
+        }
     );
 });
 

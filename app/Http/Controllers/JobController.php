@@ -18,7 +18,8 @@ class JobController extends Controller
     {
         $input = $request->all();
 
-        $jobs = Job::type($input['type'])
+        $jobs = Job::with('candidates')
+            ->type($input['type'])
             ->paused($input['paused'])
             ->search($input['query'])
             ->paginate($input['per_page']);

@@ -41,4 +41,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the Candidate associated with the user.
+     */
+    public function candidate()
+    {
+        return $this->hasOne(Candidate::class);
+    }
+
+    /**
+     * Checks if the user has a candidate.
+     */
+    public function hasCandidate()
+    {
+        return $this->candidate()->exists();
+    }
 }

@@ -65,6 +65,6 @@ class JobController extends Controller
 
         Job::destroy($ids);
 
-        return response(null, 204);
+        return null;
     }
 }

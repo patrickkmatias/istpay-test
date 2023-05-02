@@ -21,7 +21,7 @@ class DeleteJobsTest extends TestCase
 
         $response = $this->actingAs($user)->delete($path);
 
-        $response->assertNoContent();
+        $response->assertOk();
     }
 
     public function test_jobs_can_be_deleted_in_batch()
@@ -36,7 +36,7 @@ class DeleteJobsTest extends TestCase
 
         $response = $this->actingAs($user)->delete($path);
 
-        $response->assertNoContent();
+        $response->assertOk();
     }
 
 }

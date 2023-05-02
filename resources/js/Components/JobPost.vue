@@ -60,13 +60,16 @@ const test = () => console.log(isSelected.value, selectedJobs.value);
         </span>
         <h2 class="text-lg font-medium">{{ job.type }}</h2>
         <p class="py-2">{{ getDescription() }}</p>
-        <section class="flex gap-2 mt-2">
+        <section class="flex items-end justify-between gap-3 mt-2">
             <SecondaryButton
                 @click="toggleModal()"
                 type="button"
                 class="bg-indigo-300 border-indigo-400 hover:bg-indigo-400"
                 >Read more</SecondaryButton
             >
+            <p @click="toggleModal()" class="text-sm font-medium opacity-70">
+                {{ job.candidates.length }} candidates
+            </p>
         </section>
         <Modal :show="showModal" @close="closeModal">
             <JobPostDetail :job="job" @close="closeModal"></JobPostDetail>

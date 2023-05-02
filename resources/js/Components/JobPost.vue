@@ -25,6 +25,7 @@ const toggleModal = () => (showModal.value = !showModal.value);
 const closeModal = () => (showModal.value = false);
 
 function getDescription() {
+    if(!job.description) return;
     return job.description.length > 130
         ? job.description.slice(0, 130) + "..."
         : job.description;
@@ -68,7 +69,7 @@ const test = () => console.log(isSelected.value, selectedJobs.value);
                 >Read more</SecondaryButton
             >
             <p @click="toggleModal()" class="text-sm font-medium opacity-70">
-                {{ job.candidates.length }} candidates
+                {{ job.candidates.length }} candidate{{ job.candidates.length !== 1 ? 's' : null }}
             </p>
         </section>
         <Modal :show="showModal" @close="closeModal">

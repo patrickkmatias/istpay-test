@@ -17,6 +17,8 @@ class CandidateController extends Controller
      */
     public function apply(ApplyCandidateRequest $request, Job $job)
     {
+        if ($job->paused) throw new \ErrorException('Cannot apply to paused job.');
+
         $user = $request->user();
 
         if (!$user->hasCandidate()) Candidate::create(['user_id' => $user->id]);

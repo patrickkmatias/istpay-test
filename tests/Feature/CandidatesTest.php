@@ -46,6 +46,16 @@ class CandidatesTest extends TestCase
         $response->assertOk();
     }
 
+    public function test_candidate_cannot_apply_to_paused_job()
+    {
+        $this->job->paused = true;
+        $this->job->save();
+        
+        $this->apply_candidate($this->user, $this->job);
+
+        $this->assertFalse($this->user->hasCandidate());
+    }
+
     public function test_candidate_can_be_edited()
     {
         $this->apply_candidate($this->user, $this->job);

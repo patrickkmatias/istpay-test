@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Candidate;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,6 +14,11 @@ class Job extends Model
     protected $table = 'jobs';
 
     protected $fillable = ['title', 'description', 'type', 'paused'];
+
+    public function candidates()
+    {
+        return $this->belongsToMany(Candidate::class);
+    }
 
     public function scopeType(Builder $query, string|null $type)
     {

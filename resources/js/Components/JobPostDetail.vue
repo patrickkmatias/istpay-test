@@ -1,9 +1,13 @@
 <script setup>
 import { PencilIcon } from "@heroicons/vue/24/outline";
 import PrimaryButton from "./PrimaryButton.vue";
+import Candidates from './Candidates.vue'
 import SecondaryButton from "./SecondaryButton.vue";
 import UpdateJobForm from "@/Pages/Jobs/Partials/UpdateJobForm.vue";
 import { ref } from "vue";
+import { useCandidateStore } from "@/Stores/CandidateStore";
+
+const store = useCandidateStore()
 
 const { job } = defineProps({
     job: Object,
@@ -11,19 +15,47 @@ const { job } = defineProps({
 
 const emit = defineEmits(["close"]);
 
-const showForm = ref(false)
+const showForm = ref(false);
 
-const toggleForm = () => showForm.value = !showForm.value
+const toggleForm = () => (showForm.value = !showForm.value);
+
+const description = ref(getDescription());
+
+const expandedDescription = ref(false);
+
+function getDescription() {
+    if(!job.description) return;
+    return job.description.length > 260
+        ? job.description.slice(0, 260)
+        : job.description;
+}
+
+function expandDescription() {
+    description.value = job.description;
+    expandedDescription.value = !expandedDescription.value
+}
 </script>
 <template>
-    <div class="p-4 bg-indigo-200 transition-all duration-500">
+    <div
+        class="p-4 border-8 border-indigo-400 rounded-lg bg-indigo-200 transition-all duration-500"
+    >
         <UpdateJobForm v-if="showForm" :job="job" @close="toggleForm()" />
-        <article v-else>
+        <article v-else class="w-full h-[80vh] flex flex-col overflow-hidden">
             <h1 class="text-xl font-bold">{{ job.title }}</h1>
             <h2 class="text-lg font-medium">{{ job.type }}</h2>
-            <p class="py-2 text-sm whitespace-pre-wrap">{{ job.description }}</p>
+            <p class="h-2/4 py-2 text-sm whitespace-pre-wrap overflow-y-auto">
+                {{ description }}
+                <span
+                    v-if="job.description.length > 260 && !expandedDescription"
+                    @click="expandDescription()"
+                    class="text-end underline opacity-70 hover:opacity-100 underline-offset-2"
+                    >... show more</span
+                >
+            </p>
+            <Candidates :candidates="job.candidates" class=""></Candidates>
             <section class="flex gap-2 mt-2 flex-row-reverse">
                 <PrimaryButton
+                    @click="store.apply(job.id)"
                     type="button"
                     class="bg-indigo-800 border-indigo-900 hover:bg-indigo-900 focus:bg-indigo-900 active:bg-indigo-900"
                     >Apply</PrimaryButton

@@ -14,25 +14,11 @@ import { ref } from "vue";
 
 const store = useJobsStore();
 
-const { jobs, filters } = storeToRefs(store);
+const { jobs, filters, selectJobs } = storeToRefs(store);
 
 const showCreateForm = ref(false);
 
-const showSelectJob = ref(false);
-
-const selectedJobs = ref([]);
-
 const toggleCreateForm = () => (showCreateForm.value = !showCreateForm.value);
-
-const toggleSelectPost = () => (showSelectJob.value = !showSelectJob.value);
-
-function selectJob(id) {
-    let ids = selectedJobs.value;
-    const existentId = ids.indexOf(id);
-
-    existentId ? ids.push(id) : ids.splice(existentId, 1);
-    console.log(selectedJobs.value, existentId)
-}
 </script>
 <template>
     <section class="p-8 relative">
@@ -113,7 +99,7 @@ function selectJob(id) {
             </div>
             <div class="flex gap-2">
                 <SecondaryButton
-                    @click="toggleSelectPost()"
+                    @click="store.toggleSelectJobs()"
                     type="button"
                     class="!p-2 w-fit h-fit !border-0 !shadow-md"
                     ><Squares2X2Icon class="w-6 h-6 text-black"
@@ -130,8 +116,6 @@ function selectJob(id) {
             <JobPost
                 v-for="job in jobs.data"
                 :job="job"
-                :show-select="showSelectJob"
-                @select-job="selectJob($event)"
                 class="mb-6"
             />
         </div>
@@ -141,7 +125,7 @@ function selectJob(id) {
             class="transition duration-500 ease-in-out"
         >
             <ListFooter
-                v-if="showSelectJob"
+                v-if="selectJobs"
                 class="fixed z-50 bottom-0 left-0"
             />
         </Transition>

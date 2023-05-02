@@ -4,34 +4,33 @@ import Modal from "./Modal.vue";
 import { ref } from "vue";
 import JobPostDetail from "./JobPostDetail.vue";
 import { CheckCircleIcon, PlusCircleIcon } from "@heroicons/vue/24/outline";
+import { useJobsStore } from "@/Stores/JobsStore";
+import { storeToRefs } from "pinia";
+import { computed } from "vue";
+
+const store = useJobsStore();
+
+const { selectJobs, selectedJobs } = storeToRefs(store);
 
 const { job } = defineProps({
     job: Object,
-    showSelect: Boolean,
 });
-
-const emit = defineEmits(["selectJob"]);
 
 const showModal = ref(false);
 
-const isSelected = ref(false);
-
-function toggleSelect() {
-    emit("selectJob", job.id);
-    isSelected.value = !isSelected.value;
-}
+const isSelected = computed(() => selectedJobs.value.includes(job.id));
 
 const toggleModal = () => (showModal.value = !showModal.value);
 
 const closeModal = () => (showModal.value = false);
 
 function getDescription() {
-    return job.description.length > 100
+    return job.description.length > 130
         ? job.description.slice(0, 130) + "..."
         : job.description;
 }
 
-const test = () => console.log(job.description);
+const test = () => console.log(isSelected.value, selectedJobs.value);
 </script>
 <template>
     <article
@@ -45,8 +44,8 @@ const test = () => console.log(job.description);
                 class="transition duration-500 ease-in-out"
             >
                 <button
-                    v-show="showSelect"
-                    @click="toggleSelect()"
+                    v-show="selectJobs"
+                    @click="store.selectJob(job.id)"
                     type="button"
                     :class="`w-fit h-fit rounded-full transition-colors duration-300 ${
                         isSelected

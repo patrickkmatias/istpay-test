@@ -6,10 +6,15 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
 import CreateJobForm from "./Partials/CreateJobForm.vue";
 import JobPost from "@/Components/JobPost.vue";
-import { router } from "@inertiajs/vue3";
-import { ref, watch } from "vue";
-import { ArrowPathIcon, Squares2X2Icon } from "@heroicons/vue/24/outline";
 import ListFooter from "./Partials/ListFooter.vue";
+import { ArrowPathIcon, Squares2X2Icon } from "@heroicons/vue/24/outline";
+import { useJobsStore } from "@/Stores/JobsStore";
+import { storeToRefs } from "pinia";
+import { ref } from "vue";
+
+const store = useJobsStore();
+
+const { jobs, filters } = storeToRefs(store);
 
 const showCreateForm = ref(false);
 
@@ -21,19 +26,6 @@ const toggleCreateForm = () => (showCreateForm.value = !showCreateForm.value);
 
 const toggleSelectPost = () => (showSelectJob.value = !showSelectJob.value);
 
-const { filters, jobs } = defineProps({
-    filters: Object,
-    jobs: Object,
-});
-
-function updateJobs() {
-    return router.visit(route("jobs.list"), {
-        only: ["jobs", "filters"],
-        data: filters,
-        preserveScroll: true,
-    });
-}
-
 function selectJob(id) {
     let ids = selectedJobs.value;
     const existentId = ids.indexOf(id);
@@ -41,29 +33,15 @@ function selectJob(id) {
     existentId ? ids.push(id) : ids.splice(existentId, 1);
     console.log(selectedJobs.value, existentId)
 }
-
-let searchTimeout = null;
-
-watch(
-    () => ({ ...filters }),
-    async (updated, old) => {
-        if (updated.query !== old.query || searchTimeout) {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => updateJobs(), 1200);
-            return;
-        }
-        return updateJobs();
-    }
-);
 </script>
 <template>
     <section class="p-8 relative">
-        <form class="px-2">
+        <section class="px-2">
             <PrimaryButton
                 type="button"
                 @click="toggleCreateForm()"
                 class="mb-4"
-                >create new job post</PrimaryButton
+                >Create new job post</PrimaryButton
             >
             <Transition
                 enter-from-class="opacity-0"
@@ -72,6 +50,8 @@ watch(
             >
                 <CreateJobForm v-if="showCreateForm" class="mb-4" />
             </Transition>
+        </section>
+        <form @submit.prevent="" class="px-2">
             <div>
                 <InputLabel for="search">Search</InputLabel>
                 <TextInput
@@ -79,6 +59,7 @@ watch(
                     type="text"
                     class="mt-1 block w-full"
                     minlength="3"
+                    autofocus
                     v-model="filters.query"
                 />
             </div>
@@ -138,7 +119,7 @@ watch(
                     ><Squares2X2Icon class="w-6 h-6 text-black"
                 /></SecondaryButton>
                 <SecondaryButton
-                    @click="updateJobs()"
+                    @click="store.updateJobs()"
                     type="button"
                     class="!p-2 w-fit h-fit !border-0 !shadow-md"
                     ><ArrowPathIcon class="w-6 h-6 text-black"
